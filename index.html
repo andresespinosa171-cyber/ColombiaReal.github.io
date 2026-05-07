@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portal Nacional Ciudadano</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.contenedor{
+    width:100%;
+    max-width:700px;
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,0.35);
+}
+
+.encabezado{
+    background:#0f172a;
+    color:white;
+    padding:25px;
+    text-align:center;
+}
+
+.encabezado h1{
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.encabezado p{
+    color:#cbd5e1;
+}
+
+.logo-img{
+    width:90px;
+    display:block;
+    margin:0 auto 15px auto;
+    border-radius:50%;
+}
+
+.formulario{
+    padding:35px;
+}
+
+.fila{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-bottom:18px;
+}
+
+.campo{
+    display:flex;
+    flex-direction:column;
+}
+
+.campo label{
+    margin-bottom:7px;
+    color:#334155;
+    font-weight:bold;
+}
+
+.campo input,
+.campo select{
+    padding:13px;
+    border:1px solid #cbd5e1;
+    border-radius:10px;
+    font-size:15px;
+    transition:0.3s;
+}
+
+.campo input:focus,
+.campo select:focus{
+    outline:none;
+    border-color:#2563eb;
+    box-shadow:0 0 10px rgba(37,99,235,0.15);
+}
+
+.boton{
+    width:100%;
+    margin-top:10px;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#2563eb;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.boton:hover{
+    background:#1d4ed8;
+}
+
+.info{
+    margin-top:25px;
+    background:#fef3c7;
+    color:#92400e;
+    padding:18px;
+    border-radius:12px;
+    line-height:1.6;
+    font-size:14px;
+}
+
+.seguridad{
+    margin-top:18px;
+    text-align:center;
+    color:#16a34a;
+    font-size:14px;
+}
+
+.footer{
+    text-align:center;
+    padding:18px;
+    background:#f8fafc;
+    color:#64748b;
+    font-size:13px;
+}
+
+@media(max-width:700px){
+
+    .fila{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <div class="encabezado">
+
+        <img 
+        src="https://yt3.googleusercontent.com/m5O4WhrLRGhq4iDS281aw4A6dKVbNDfkblPGOByG6DRbR5HMuILMIJBFzcnsXlP17-YPptg8=s900-c-k-c0x00ffffff-no-rj"
+        alt="Logo"
+        class="logo-img">
+
+        <h1>Portal Nacional Ciudadano</h1>
+
+        <p>Sistema Central de Registro y Validación Ciudadana</p>
+
+    </div>
+
+    <div class="formulario">
+
+        <form id="registroForm">
+
+            <div class="fila">
+
+                <div class="campo">
+                    <label>Nombres</label>
+                    <input type="text" required>
+                </div>
+
+                <div class="campo">
+                    <label>Apellidos</label>
+                    <input type="text" required>
+                </div>
+
+            </div>
+
+            <div class="fila">
+
+                <div class="campo">
+                    <label>Correo electrónico</label>
+                    <input type="email" required>
+                </div>
+
+                <div class="campo">
+                    <label>Número de identificación</label>
+                    <input type="text" required>
+                </div>
+
+            </div>
+
+            <div class="fila">
+
+                <div class="campo">
+
+                    <label>Tipo de documento</label>
+
+                    <select required>
+                        <option>Cédula de ciudadanía</option>
+                        <option>Pasaporte</option>
+                        <option>Documento extranjero</option>
+                        <option>Tarjeta de identidad</option>
+                    </select>
+
+                </div>
+
+                <div class="campo">
+
+                    <label>País</label>
+
+                    <select required>
+                        <option>Colombia</option>
+                        <option>México</option>
+                        <option>Argentina</option>
+                        <option>Chile</option>
+                        <option>Perú</option>
+                        <option>España</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="fila">
+
+                <div class="campo">
+
+                    <label>Sexo</label>
+
+                    <select required>
+                        <option>Masculino</option>
+                        <option>Femenino</option>
+                        <option>Otro</option>
+                    </select>
+
+                </div>
+
+                <div class="campo">
+                    <label>Fecha de nacimiento</label>
+                    <input type="date" required>
+                </div>
+
+            </div>
+
+            <div class="fila">
+
+                <div class="campo">
+                    <label>Edad</label>
+                    <input type="number" required>
+                </div>
+
+                <div class="campo">
+                    <label>Teléfono</label>
+                    <input type="tel" required>
+                </div>
+
+            </div>
+
+            <div class="fila">
+
+                <div class="campo">
+                    <label>Dirección residencial</label>
+                    <input type="text" required>
+                </div>
+
+                <div class="campo">
+                    <label>Ciudad</label>
+                    <input type="text" required>
+                </div>
+
+            </div>
+
+            <button class="boton" type="submit">
+                Validar información ciudadana
+            </button>
+
+        </form>
+
+        <div class="seguridad">
+            🔒 Plataforma protegida con cifrado SSL/TLS
+        </div>
+
+        <div class="info">
+            ⚠ DEMO EDUCATIVA PARA INFORMÁTICA FORENSE.
+            <br><br>
+            Esta simulación muestra cómo una página puede aparentar ser oficial para generar confianza visual y solicitar datos personales.
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Dirección Nacional de Servicios Digitales • Plataforma Experimental
+    </div>
+
+</div>
+
+<script>
+
+document
+.getElementById("registroForm")
+.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    const boton = document.querySelector(".boton");
+
+    boton.innerText = "Verificando información...";
+    boton.disabled = true;
+
+    setTimeout(function(){
+
+        document.querySelector(".formulario").innerHTML = 
+
+        "<div style='text-align:center;padding:40px;'>" +
+
+            "<h2 style='color:#0f172a;margin-bottom:15px;'>" +
+                "Validación completada" +
+            "</h2>" +
+
+            "<p style='color:#475569;line-height:1.7;'>" +
+                "Su información fue recibida correctamente.<br><br>" +
+                "El sistema continuará el proceso de validación automáticamente." +
+            "</p>" +
+
+            "<div style='margin-top:25px;color:#16a34a;font-weight:bold;'>" +
+                "✔ Estado del trámite: En revisión" +
+            "</div>" +
+
+        "</div>";
+
+    }, 2000);
+
+});
+
+</script>
+
+</body>
+</html>
